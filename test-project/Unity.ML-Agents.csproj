@@ -63,88 +63,88 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Academy.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\ActionMasker.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Agent.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\AssemblyInfo.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Constants.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\DecisionRequester.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Demonstration.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\DemonstrationRecorder.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\DemonstrationStore.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\EpisodeIdCounter.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentAction.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfo.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfoActionPair.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\BrainParameters.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Command.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\CustomResetParameters.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\DemonstrationMeta.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\EngineConfiguration.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Header.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Observation.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\SpaceType.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityInput.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityMessage.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityOutput.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationInput.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationOutput.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInput.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlOutput.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternal.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternalGrpc.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\GrpcExtensions.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\RpcCommunicator.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\ICommunicator.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\ApplierImpl.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\BarracudaModelParamLoader.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\GeneratorImpl.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\ModelRunner.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorApplier.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorGenerator.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorNames.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorProxy.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\Utils\Multinomial.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\Utils\RandomNormal.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Monitor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\BarracudaPolicy.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\BehaviorParameters.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\BrainParameters.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\HeuristicPolicy.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\IPolicy.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\RemotePolicy.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\CameraSensor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\CameraSensorComponent.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\ISensor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\Observation.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensorComponent2D.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensorComponent3D.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensorComponentBase.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RenderTextureSensor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RenderTextureSensorComponent.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\SensorBase.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\SensorComponent.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\SensorShapeValidator.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\StackingSensor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\VectorSensor.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\WriteAdapter.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\EngineConfigurationChannel.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\FloatPropertiesChannel.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\RawBytesChannel.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\SideChannel.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Timer.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\UnityAgentsException.cs" />
-    <Compile Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Utilities.cs" />
-    <None Include="C:\Users\marcd\OneDrive\Documentos\MLAgents14.1\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Unity.ML-Agents.asmdef" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Academy.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\ActionMasker.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Agent.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\AssemblyInfo.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Constants.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\DecisionRequester.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Demonstration.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\DemonstrationRecorder.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\DemonstrationStore.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\EpisodeIdCounter.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentAction.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfo.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfoActionPair.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\BrainParameters.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Command.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\CustomResetParameters.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\DemonstrationMeta.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\EngineConfiguration.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Header.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Observation.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\SpaceType.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityInput.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityMessage.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityOutput.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationInput.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationOutput.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInput.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlOutput.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternal.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternalGrpc.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\GrpcExtensions.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Grpc\RpcCommunicator.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\ICommunicator.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\ApplierImpl.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\BarracudaModelParamLoader.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\GeneratorImpl.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\ModelRunner.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorApplier.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorGenerator.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorNames.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\TensorProxy.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\Utils\Multinomial.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\InferenceBrain\Utils\RandomNormal.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Monitor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\BarracudaPolicy.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\BehaviorParameters.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\BrainParameters.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\HeuristicPolicy.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\IPolicy.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Policy\RemotePolicy.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\CameraSensor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\CameraSensorComponent.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\ISensor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\Observation.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensorComponent2D.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensorComponent3D.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RayPerceptionSensorComponentBase.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RenderTextureSensor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\RenderTextureSensorComponent.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\SensorBase.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\SensorComponent.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\SensorShapeValidator.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\StackingSensor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\VectorSensor.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Sensor\WriteAdapter.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\EngineConfigurationChannel.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\FloatPropertiesChannel.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\RawBytesChannel.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\SideChannel\SideChannel.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Timer.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\UnityAgentsException.cs" />
+    <Compile Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Utilities.cs" />
+    <None Include="C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1\com.unity.ml-agents\Runtime\Unity.ML-Agents.asmdef" />
     <Reference Include="Barracuda">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/test-project/Library/ScriptAssemblies/Barracuda.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Barracuda.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/test-project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/test-project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -339,22 +339,22 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/test-project/Library/PackageCache/com.unity.barracuda@0.6.3-preview/Barracuda/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.barracuda@0.6.3-preview/Barracuda/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/test-project/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Core">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
-      <HintPath>C:/Users/marcd/OneDrive/Documentos/MLAgents14.1/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
