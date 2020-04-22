@@ -29,5 +29,11 @@ To use tensorflow:
 
 -------------------------------------------------------------------------------------------
 
+https://github.com/Unity-Technologies/ml-agents/blob/latest_release/docs/Training-ML-Agents.md
+Example : If we have 1000 training samples and Batch size is set to 500, it will take 2 iterations to complete 1 Epoch.
+
 run info
-run1: reward only when reachnig cube. default hyperparameters. 
+run1: reward only when reachnig cube. PPO | 20 training samples | batch_size: 10 | buffer_size: 100 |
+run2: reward only when reachnig cube. PPO | 20 training samples | batch_size: 20 | buffer_size: 100 |
+run3: reward only when reachnig cube. PPO | 20 training samples | batch_size: 2024 | buffer_size: 20240 |
+run4: reward only when reachnig cube. PPO | 20 training samples | batch_size: 2024 | buffer_size: 20240 | num_layers: 3
