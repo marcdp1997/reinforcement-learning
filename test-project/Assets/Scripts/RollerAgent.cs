@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using MLAgents;
 
 public class RollerAgent : Agent
 {
     public Transform target = null;
-    public float speed = 10;
+    public float speed = 10; 
 
     private Vector3 initialPos;
     private Rigidbody rBody;
@@ -18,20 +17,21 @@ public class RollerAgent : Agent
         initialPos = transform.position;
     }
 
+    private void SetTarget()
+    {
+        // Move the target to a new spot
+        target.position = new Vector3(initialPos.x + Random.Range(-6, 6),
+                                      initialPos.y,
+                                      initialPos.z + Random.Range(-6, 6));
+    }
+
     public override void AgentReset()
     {
-        if (this.transform.position.y < initialPos.y - 5.0f)
-        {
-            // If the Agent fell, zero its momentum
-            this.rBody.angularVelocity = Vector3.zero;
-            this.rBody.velocity = Vector3.zero;
-            this.transform.position = initialPos;
-        }
+        this.rBody.angularVelocity = Vector3.zero;
+        this.rBody.velocity = Vector3.zero;
+        this.transform.position = initialPos;
 
-        // Move the target to a new spot
-        target.position = new Vector3(initialPos.x + (Random.value * 8 - 4),
-                                      initialPos.y,
-                                      initialPos.z + (Random.value * 8 - 4));
+        SetTarget();
     }
 
     public override void CollectObservations()
@@ -69,11 +69,11 @@ public class RollerAgent : Agent
         if (distanceToTarget < 2.0f)
         {
             SetReward(1.0f);
-            Done();
+            SetTarget();
         }
 
         // Fell off platform
-        if (this.transform.position.y < initialPos.y - 5.0f)
+        if (GetCumulativeReward() == 3)
         {
             Done();
         }

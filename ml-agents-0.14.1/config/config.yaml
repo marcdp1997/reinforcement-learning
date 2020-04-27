@@ -287,6 +287,5 @@ Basic:
             gamma: 0.9
 
 RollerBall:
-    batch_size: 2024
-    buffer_size: 20240
-    num_layers: 3
+    batch_size: 10
+    buffer_size: 100
