@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using MLAgents;
 
 public class RollerAgent : Agent
 {
     public Transform target = null;
-    public float speed = 10; 
+    public float speed = 10;
+    public TextMesh debugText;
 
     private Vector3 initialPos;
     private Rigidbody rBody;
@@ -17,21 +16,15 @@ public class RollerAgent : Agent
         initialPos = transform.position;
     }
 
-    private void SetTarget()
-    {
-        // Move the target to a new spot
-        target.position = new Vector3(initialPos.x + Random.Range(-6, 6),
-                                      initialPos.y,
-                                      initialPos.z + Random.Range(-6, 6));
-    }
-
     public override void AgentReset()
     {
         this.rBody.angularVelocity = Vector3.zero;
         this.rBody.velocity = Vector3.zero;
         this.transform.position = initialPos;
 
-        SetTarget();
+        target.position = new Vector3(initialPos.x + Random.Range(-7, 7),
+                              initialPos.y,
+                              initialPos.z + Random.Range(-7, 7));
     }
 
     public override void CollectObservations()
@@ -68,13 +61,10 @@ public class RollerAgent : Agent
         // Reached target
         if (distanceToTarget < 2.0f)
         {
-            SetReward(1.0f);
-            SetTarget();
-        }
+            float reward = (1.0f - ((float)GetStepCount() / (float)maxStep)) * 10;
+            SetReward(reward);
+            debugText.text = "Previous reward: " + GetCumulativeReward();
 
-        // Fell off platform
-        if (GetCumulativeReward() == 3)
-        {
             Done();
         }
     }
