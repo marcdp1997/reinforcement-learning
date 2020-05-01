@@ -61,7 +61,16 @@ public class RollerAgent : Agent
         // Reached target
         if (distanceToTarget < 2.0f)
         {
-            float reward = (1.0f - ((float)GetStepCount() / (float)maxStep)) * 10;
+            float reward = (1.0f - ((float)GetStepCount() / (float)maxStep)) * 100;
+            SetReward(reward);
+            debugText.text = "Previous reward: " + GetCumulativeReward();
+
+            Done();
+        }
+
+        if (this.transform.position.y < initialPos.y - 5.0f)
+        {
+            float reward = (1.0f - ((float)GetStepCount() / (float)maxStep)) * -100;
             SetReward(reward);
             debugText.text = "Previous reward: " + GetCumulativeReward();
 

@@ -286,6 +286,6 @@ Basic:
             strength: 1.0
             gamma: 0.9
 
-RollerBall:
-    batch_size: 10
-    buffer_size: 100
+RollingBall:
+    max_steps: 1.0e6
+
