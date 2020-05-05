@@ -827,6 +827,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2036639673560177155, guid: 60f38e61352dcf841bf8e3bcbaa40edb,
+        type: 3}
+      propertyPath: m_BrainParameters.vectorActionSize.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2036639673560177165, guid: 60f38e61352dcf841bf8e3bcbaa40edb,
         type: 3}
       propertyPath: debugtext
@@ -998,12 +1003,12 @@ PrefabInstance:
     - target: {fileID: 2036639675236129433, guid: 60f38e61352dcf841bf8e3bcbaa40edb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 2036639675236129433, guid: 60f38e61352dcf841bf8e3bcbaa40edb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60f38e61352dcf841bf8e3bcbaa40edb, type: 3}

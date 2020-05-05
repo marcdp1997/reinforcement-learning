@@ -16,7 +16,7 @@ To train agents:
 
 1. cd C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\ml-agents-0.14.1
 2. conda activate mlagents0.14.1
-3. mlagents-learn config/config.yaml --run-id=RollerBall-12 --train
+3. mlagents-learn config/config.yaml --run-id=RollerBall-14 --train
 
 -------------------------------------------------------------------------------------------
 

@@ -66,58 +66,58 @@
     <Compile Include="Assets\ML-Agents\Editor\DisableBurstFromMenu.cs" />
     <Compile Include="Assets\ML-Agents\Editor\Tests\StandaloneBuildTest.cs" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="MacBLAS">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/MacBLAS.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/MacBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Barracuda-editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Barracuda-editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Barracuda-editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Barracuda">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Barracuda.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Barracuda.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="iOSBLAS">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/iOSBLAS.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/iOSBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="BurstBLAS">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/BurstBLAS.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/BurstBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -305,29 +305,32 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.barracuda@0.6.3-preview/Barracuda/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.barracuda@0.6.3-preview/Barracuda/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Abstractions">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="Grpc.Core">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core">
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/ml-agents-0.14.1/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/marcd/OneDrive/Documentos/GitHub/reinforcement-learning/test-project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
