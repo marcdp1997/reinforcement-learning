@@ -29,5 +29,4 @@ RollingBall:
 
     
 CoopRollingBall:
-    max_steps: 3.0e6
-    hidden_units: 256
+    max_steps: 1.0e6

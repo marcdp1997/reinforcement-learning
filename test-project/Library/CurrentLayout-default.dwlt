@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 471}
   m_MaxSize: {x: 18004, y: 14021}
   vertical: 0
-  controlID: 76
+  controlID: 20
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 471}
   m_MaxSize: {x: 10001, y: 14021}
   vertical: 1
-  controlID: 39
+  controlID: 26
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,23 +370,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 70fbffff
+      m_SelectedIDs: 3a5f0000465f0000
+      m_LastClickedID: 24390
+      m_ExpandedIDs: bca6ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: AdHocTeamwork (2)
+        m_OriginalName: AdHocTeamwork (2)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -19182
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -435,20 +435,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Brains
+    - Assets/Prefab
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Brains
+  - Assets/Prefab
   m_LastFoldersGridSize: 58
   m_LastProjectPath: C:\Users\marcd\OneDrive\Documentos\GitHub\reinforcement-learning\test-project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b8780000
-    m_LastClickedID: 30904
-    m_ExpandedIDs: 00000000703700007437000076370000783700007a3700007c3700008837000000ca9a3b
+    m_SelectedIDs: cc370000
+    m_LastClickedID: 14284
+    m_ExpandedIDs: 00000000d2360000d4360000d6360000d836000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -476,7 +476,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000070370000723700007437000076370000783700007a3700007c370000
+    m_ExpandedIDs: 00000000d2360000d4360000d6360000d8360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -531,7 +531,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 58
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 162
+  m_DirectoriesAreaWidth: 232
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -18766
+  m_LastSelectedObjectID: 16990
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -616,16 +616,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: a66a8b9d034b0174a9768040b673c761
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.8201617, y: -100.36698, z: 46.58276}
+    m_Target: {x: -0.14999962, y: 4.33, z: 0.13000011}
     speed: 2
-    m_Value: {x: 0.8201617, y: -100.36698, z: 46.58276}
+    m_Value: {x: -0.14999962, y: 4.33, z: 0.13000011}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -671,13 +671,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.5233734, y: 0.0081835715, z: -0.0050114, w: -0.8520909}
+    m_Target: {x: -0.7438749, y: 0.0014107985, z: -0.0015501305, w: -0.6683714}
     speed: 2
-    m_Value: {x: -0.5246324, y: 0.008175755, z: -0.005023494, w: -0.8512747}
+    m_Value: {x: -0.74384725, y: 0.001410746, z: -0.0015500729, w: -0.6683465}
   m_Size:
-    m_Target: 105.14476
+    m_Target: 10.459221
     speed: 2
-    m_Value: 100.617
+    m_Value: 10.459221
   m_Ortho:
     m_Target: 0
     speed: 2
