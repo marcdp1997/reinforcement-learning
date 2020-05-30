@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/AdHocTeamwork.unity
+- path: Assets/Scenes/Centralized.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
