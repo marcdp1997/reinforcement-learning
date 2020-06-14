@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Distributed\Target.cs" />
     <Compile Include="Assets\Scripts\Final Game\Bullet.cs" />
     <Compile Include="Assets\Scripts\Final Game\Player.cs" />
+    <Compile Include="Assets\Scripts\Final Game\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\Final Game\Shield.cs" />
     <Compile Include="Assets\Scripts\Final Game\StructContiner.cs" />
     <Compile Include="Assets\Scripts\Single Agent\AgentJump.cs" />

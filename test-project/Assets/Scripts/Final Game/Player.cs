@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using MLAgents;
 
@@ -7,23 +8,19 @@ public class Player : Agent
     private Rigidbody rBody;
     private int currBullets;
     private float currLife;
+    private bool healing;
 
     private float rateTimer;
-    private float shieldCooldownTimer;
-    private float healCooldownTimer;
+    private float shieldCdTimer;
+    private float healCdTimer;
 
-    public Transform mate;
+    public PlayerUI info;
+    public Transform rotationRoot;
+    public Player mate;
     public PlayerStats player;
     public ShootingStats shoot;
     public ShieldStats shield;
     public HealStats heal;
-
-    [Header("User Interface")]
-    public Image lifeBar;
-    public Image healBar;
-    public Image shieldBar;
-    public Image bulletsBar;
-    public Text lifeText;
 
     private void Awake()
     {
@@ -35,10 +32,12 @@ public class Player : Agent
         currBullets = 3;
         rateTimer = 0;
         currLife = player.maxLife;
-        shieldCooldownTimer = 0;
+        shieldCdTimer = 0;
+        healing = false;
 
-        UpdateLifeUI();
-        UpdateBulletsUI();
+        info.UpdateLifeUI(currLife, player.maxLife);
+        info.UpdateBulletsUI(currBullets, rateTimer);
+        info.UpdateName(gameObject.name);
     }
 
     private void Update()
@@ -48,33 +47,45 @@ public class Player : Agent
         RequestDecision();
     }
 
+    public virtual void Rotate(Vector3 movement)
+    {
+        if (movement != Vector3.zero)
+        {
+            rotationRoot.transform.rotation = Quaternion.Lerp(rotationRoot.transform.rotation, Quaternion.LookRotation(movement), 10 * Time.deltaTime);
+        }
+    }
+
     public override void AgentAction(float[] vectorAction)
     {
         // Movement
         var x = vectorAction[0];
         var z = vectorAction[1];
-        rBody.AddForce(new Vector3(x * player.speed, 0, z * player.speed));
+        Vector3 movement = new Vector3(x * player.speed, 0, z * player.speed);
+        rBody.AddForce(movement);
+        Rotate(movement);
 
-        // Shooting
-        var shootAttempt = vectorAction[2];
-        if (shootAttempt == 1.0f && CanShoot()) Shoot();
+        // Shoot
+        if (vectorAction[2] == 1.0f && CanShoot()) Shoot();
 
-        // Abilities
-        var useShieldOnHimself = vectorAction[3];
-        if (useShieldOnHimself == 1.0f && CanUseShield()) UseShield(transform.position);
+        // Shield
+        if (vectorAction[3] == 1.0f && CanShield()) Shield(this);
+        if (vectorAction[4] == 1.0f && CanShield()) Shield(mate);
 
-        var useShieldOnMate = vectorAction[4];
-        if (useShieldOnMate == 1.0f && CanUseShield()) UseShield(mate.position);
+        // Heal
+        if (vectorAction[5] == 1.0f && CanHeal()) Heal(this);
+        if (vectorAction[6] == 1.0f && CanHeal()) Heal(mate);
     }
 
     public override float[] Heuristic()
     {
-        var action = new float[5];
+        var action = new float[7];
         action[0] = Input.GetAxis("Horizontal");
         action[1] = Input.GetAxis("Vertical");
         action[2] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
         action[3] = Input.GetKeyDown(KeyCode.O) ? 1.0f : 0.0f;
         action[4] = Input.GetKeyDown(KeyCode.P) ? 1.0f : 0.0f;
+        action[5] = Input.GetKeyDown(KeyCode.K) ? 1.0f : 0.0f;
+        action[6] = Input.GetKeyDown(KeyCode.L) ? 1.0f : 0.0f;
 
         return action;
     }
@@ -84,7 +95,7 @@ public class Player : Agent
         if (currBullets < 3)
         {
             rateTimer += Time.deltaTime / shoot.rateRecover;
-            UpdateBulletsUI();
+            info.UpdateBulletsUI(currBullets, rateTimer);
 
             if (rateTimer >= 1.0f)
             {
@@ -97,19 +108,24 @@ public class Player : Agent
     private void UpdateAbilities()
     {
         // Shield
-        shieldCooldownTimer -= Time.deltaTime;
-        if (shieldCooldownTimer < 0) shieldCooldownTimer = 0;
-        else UpdateShieldUI();
+        shieldCdTimer -= Time.deltaTime;
+        if (shieldCdTimer < 0) shieldCdTimer = 0;
+        else info.UpdateShieldUI(shieldCdTimer, shield.cooldown);
 
         // Heal
-        healCooldownTimer -= Time.deltaTime;
-        if (healCooldownTimer < 0) healCooldownTimer = 0;
-        else UpdateHealUI();
+        if (!healing) healCdTimer -= Time.deltaTime;
+        if (healCdTimer < 0) healCdTimer = 0;
+        else info.UpdateHealUI(healCdTimer, heal.cooldown);
     }
 
-    private bool CanUseShield()
+    private bool CanShield()
     {
-        return shieldCooldownTimer == 0 ? true : false;
+        return shieldCdTimer == 0 ? true : false;
+    }
+
+    private bool CanHeal()
+    {
+        return healCdTimer == 0 ? true : false;
     }
 
     private bool CanShoot()
@@ -119,51 +135,57 @@ public class Player : Agent
 
     private void Shoot()
     {
-        Bullet temp = Instantiate(shoot.prefab, shoot.firePoint.position, Quaternion.identity).GetComponent<Bullet>();
-        temp.Shoot(shoot.speed, transform.forward, shoot.timeActive, player.damage);
+        GameObject go = Instantiate(shoot.prefab, shoot.firePoint.position, Quaternion.identity);
+        go.GetComponent<Bullet>().Shoot(shoot.speed, transform.forward, shoot.timeActive, player.damage);
         currBullets--;
     }
 
-    private void UseShield(Vector3 position)
+    private void Shield(Player target)
     {
-        Shield temp = Instantiate(shield.prefab, position, Quaternion.identity).GetComponent<Shield>();
-        temp.Use(shield.timeActive);
-        shieldCooldownTimer = shield.cooldown;
+        GameObject go = Instantiate(shield.prefab, target.gameObject.transform.position, Quaternion.identity);
+        go.GetComponent<Shield>().Use(shield.timeActive);
+        shieldCdTimer = shield.cooldown;
     }
+
+    private void Heal(Player target)
+    {
+        healing = true;
+        StartCoroutine(HealOverTime(heal.timeActive, heal.healSecond));
+        healCdTimer = heal.cooldown;
+    }
+
+    private IEnumerator HealOverTime(float timeActive, float healPerSecond)
+    {
+        float secondsPassed = 0;
+
+        while (healing && secondsPassed < timeActive)
+        {
+            yield return new WaitForSeconds(1.0f);
+            secondsPassed += 1.0f;
+
+            if (currLife + healPerSecond <= player.maxLife) currLife += healPerSecond;
+            else currLife = player.maxLife;
+
+            info.UpdateLifeUI(currLife, player.maxLife);
+        }
+
+        healing = false;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet Red") ||
             other.gameObject.layer == LayerMask.NameToLayer("Bullet Blue"))
         {
+            healing = false;
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
 
             if (currLife - bullet.damage >= 0) currLife -= bullet.damage;
             else currLife = 0;
 
-            UpdateLifeUI();
+            info.UpdateLifeUI(currLife, player.maxLife);
             Destroy(other.gameObject);
         }
-    }
-
-    private void UpdateLifeUI()
-    {
-        lifeText.text = currLife.ToString();
-        lifeBar.fillAmount = currLife / player.maxLife;
-    }
-
-    private void UpdateBulletsUI()
-    {
-        bulletsBar.fillAmount = (currBullets + rateTimer) / 3;
-    }
-
-    private void UpdateShieldUI()
-    {
-        shieldBar.fillAmount = 1 - shieldCooldownTimer / shield.cooldown;
-    }
-
-    private void UpdateHealUI()
-    {
-        healBar.fillAmount = 1 - healCooldownTimer / heal.cooldown;
     }
 }
