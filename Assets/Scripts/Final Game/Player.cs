@@ -50,17 +50,16 @@ public class Player : Agent
     {
         if (movement != Vector3.zero)
         {
-            rotationRoot.transform.rotation = Quaternion.Lerp(rotationRoot.transform.rotation, Quaternion.LookRotation(movement), 10 * Time.deltaTime);
+            rotationRoot.transform.rotation = Quaternion.Lerp(rotationRoot.transform.rotation, Quaternion.LookRotation(movement), 5 * Time.deltaTime);
         }
     }
 
     public override void OnActionReceived(float[] vectorAction)
     {
         // Movement
-        var x = vectorAction[0];
-        var z = vectorAction[1];
-        Vector3 movement = new Vector3(x * player.speed, 0, z * player.speed);
-        rBody.AddForce(movement);
+        Vector3 movement = new Vector3(vectorAction[0], 0, vectorAction[1]);
+        movement = movement.normalized * player.speed;
+        rBody.velocity = movement;
         Rotate(movement);
 
         // Shoot

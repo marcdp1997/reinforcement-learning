@@ -212,12 +212,12 @@ PrefabInstance:
     - target: {fileID: 1828074161426177665, guid: 0c198e6f06bb69d4395481b03c7cc71e,
         type: 3}
       propertyPath: shoot.speed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1828074161426177665, guid: 0c198e6f06bb69d4395481b03c7cc71e,
         type: 3}
       propertyPath: player.speed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c198e6f06bb69d4395481b03c7cc71e, type: 3}
@@ -312,12 +312,12 @@ PrefabInstance:
     - target: {fileID: 1828074161426177665, guid: 2ae6ab1554eb5024489897ac446a5906,
         type: 3}
       propertyPath: shoot.speed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1828074161426177665, guid: 2ae6ab1554eb5024489897ac446a5906,
         type: 3}
       propertyPath: player.speed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ae6ab1554eb5024489897ac446a5906, type: 3}
@@ -444,12 +444,12 @@ PrefabInstance:
     - target: {fileID: 1828074161426177665, guid: 0c198e6f06bb69d4395481b03c7cc71e,
         type: 3}
       propertyPath: shoot.speed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1828074161426177665, guid: 0c198e6f06bb69d4395481b03c7cc71e,
         type: 3}
       propertyPath: player.speed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c198e6f06bb69d4395481b03c7cc71e, type: 3}
@@ -836,7 +836,7 @@ PrefabInstance:
     - target: {fileID: 1825140506467394768, guid: 2ae6ab1554eb5024489897ac446a5906,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.84
+      value: -4.52
       objectReference: {fileID: 0}
     - target: {fileID: 1825140506467394768, guid: 2ae6ab1554eb5024489897ac446a5906,
         type: 3}
@@ -897,12 +897,12 @@ PrefabInstance:
     - target: {fileID: 1828074161426177665, guid: 2ae6ab1554eb5024489897ac446a5906,
         type: 3}
       propertyPath: shoot.speed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1828074161426177665, guid: 2ae6ab1554eb5024489897ac446a5906,
         type: 3}
       propertyPath: player.speed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ae6ab1554eb5024489897ac446a5906, type: 3}
