@@ -1,6 +1,7 @@
+Official documentation: https://github.com/Unity-Technologies/ml-agents/blob/release_3_docs/docs/Readme.md
 
 This project is using the following softwares:
-   Unity 2019.4.0f1 (MLAgents 1.0.2 package installed)
+   Unity 2019.4.0f1 (MLAgents 1.1 package installed)
    Anaconda3 2020.02 (Python 3.7.6)
    MLAgents1.1 release from https://github.com/Unity-Technologies/ml-agents/releases
 
