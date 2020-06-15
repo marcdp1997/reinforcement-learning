@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A4061F55-E325-8F4A-B099-D3CBB9358603}</ProjectGuid>
+    <ProjectGuid>{02D41B33-2162-FDE6-66D0-8F3239E4561E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -262,22 +262,22 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Core">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -634,94 +634,94 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.MacBLAS">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.iOSBLAS">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ML-Agents.CommunicatorObjects">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.BurstBLAS">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ML-Agents.Editor">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ML-Agents">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Marc/Desktop/Unity/Reinforcement Learning/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/reinforcement-learning/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
