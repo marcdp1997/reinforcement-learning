@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5039381525544867689}
   m_Layer: 8
   m_Name: Blue Shield
-  m_TagString: Untagged
+  m_TagString: blueShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3ece86bb65bf22149b0eb638dc486fed, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

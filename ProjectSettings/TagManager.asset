@@ -27,6 +27,11 @@ TagManager:
   - switchOff
   - badFood
   - food
+  - redAgent
+  - redBullet
+  - blueBullet
+  - redShield
+  - blueShield
   layers:
   - Default
   - TransparentFX

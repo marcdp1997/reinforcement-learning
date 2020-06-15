@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
 using UnityEngine;
 
 public class Player : Agent
@@ -53,6 +54,25 @@ public class Player : Agent
             rotationRoot.transform.rotation = Quaternion.Lerp(rotationRoot.transform.rotation, Quaternion.LookRotation(movement), 5 * Time.deltaTime);
         }
     }
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        // Observations
+        sensor.AddObservation(this.transform.position);
+        sensor.AddObservation(mate.transform.position);
+
+        sensor.AddObservation(currLife);
+        sensor.AddObservation(mate.currLife);
+        sensor.AddObservation(currBullets);
+        sensor.AddObservation(mate.currBullets);
+        sensor.AddObservation(healCdTimer);
+        sensor.AddObservation(mate.healCdTimer);
+        sensor.AddObservation(shieldCdTimer);
+        sensor.AddObservation(mate.shieldCdTimer);
+
+        sensor.AddObservation(rBody.velocity);
+    }
+
 
     public override void OnActionReceived(float[] vectorAction)
     {
