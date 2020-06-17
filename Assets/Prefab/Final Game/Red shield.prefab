@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5662502843661500086}
   - component: {fileID: 5039381525544867689}
   m_Layer: 9
-  m_Name: Red shield
+  m_Name: Red Shield
   m_TagString: redShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: abb06ce49fb748048a6f123381cde073, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
