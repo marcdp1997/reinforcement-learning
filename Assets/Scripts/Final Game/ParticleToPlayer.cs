@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 
+public enum Effect { Shield, Heal }
+
 public class ParticleToPlayer : MonoBehaviour 
 {
 	private ParticleSystem ps;
 	private ParticleSystem.Particle[] particles;
 
-    private Transform target;
+    private Player source;
+    private Player target;
+    private Effect effect;
     private bool effectEnabled;
 
     [SerializeField] private float delayTime;
@@ -38,22 +42,25 @@ public class ParticleToPlayer : MonoBehaviour
 
         for (int i = 0; i < numParticlesAlive; i++)
         {
-            Vector3 newDirVec = (target.position - particles[i].position).normalized;
+            Vector3 newDirVec = (target.gameObject.transform.position - particles[i].position).normalized;
             particles[i].velocity = Vector3.Lerp(particles[i].velocity, newDirVec * velocity, lerpValue);
 
-            if ( Vector3.Distance(target.position, particles[i].position) <= 0.1)
+            if (Vector3.Distance(target.gameObject.transform.position, particles[i].position) <= 0.1)
             {
                 particles[i].remainingLifetime = 0;
-                //ParticleManager.Instance.PlayDNAPickUp();
             }
         }
 
         if (numParticlesAlive <= 0)
         {
+            if (effect == Effect.Heal) 
+                target.HealOverTime();
+            if (effect == Effect.Shield)
+                target.CreateShield(source);
+                
             Destroy(this.gameObject);
         }
 
-        // Apply the particle changes to the particle system
         ps.SetParticles(particles, numParticlesAlive);
     }
 
@@ -66,8 +73,10 @@ public class ParticleToPlayer : MonoBehaviour
             particles = new ParticleSystem.Particle[ps.main.maxParticles]; 
 	}
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Player source, Player target, Effect effect)
     {
+        this.source = source;
         this.target = target;
+        this.effect = effect;
     }
 }

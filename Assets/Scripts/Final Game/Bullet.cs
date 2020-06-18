@@ -24,5 +24,15 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team Red") ||
+            other.gameObject.layer == LayerMask.NameToLayer("Team Blue"))
+        {
+            other.GetComponentInParent<Player>()?.RecieveDamage(damage);
+            Destroy(this.gameObject);
+        }
+    }
+
     public float damage {get; set;}
 }

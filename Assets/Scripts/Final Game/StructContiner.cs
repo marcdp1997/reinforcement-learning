@@ -22,6 +22,7 @@ public struct ShootingStats
 [Serializable]
 public struct ShieldStats
 {
+    public GameObject particles;
     public GameObject prefab;
     public float cooldown;
     public float timeActive;
@@ -30,6 +31,8 @@ public struct ShieldStats
 [Serializable]
 public struct HealStats
 {
+    public GameObject particles;
+    public ParticleSystem effect;
     public float cooldown;
     public float timeActive;
     public float healSecond;

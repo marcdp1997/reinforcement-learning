@@ -3,20 +3,26 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
+public enum Team { Blue, Red };
+
 public class Player : Agent
 {
     private Rigidbody rBody;
+    private Vector3 initPosition;
     private int currBullets;
     private float currLife;
     private bool healing;
-
     private float rateTimer;
     private float shieldCdTimer;
     private float healCdTimer;
 
     public PlayerUI info;
+    public Score score;
+    [Space(10)]
+    public Team team;
     public Transform rotationRoot;
     public Player mate;
+    [Space(10)]
     public PlayerStats player;
     public ShootingStats shoot;
     public ShieldStats shield;
@@ -25,10 +31,24 @@ public class Player : Agent
     public override void Initialize()
     {
         rBody = GetComponent<Rigidbody>();
+        initPosition = this.transform.position;
     }
 
     public override void OnEpisodeBegin()
     {
+        ResetPlayer();
+    }
+
+    private void Update()
+    {
+        UpdateAmmunition();
+        UpdateAbilities();
+        RequestDecision();
+    }
+
+    private void ResetPlayer()
+    {
+        this.transform.position = initPosition;
         currBullets = 3;
         rateTimer = 0;
         currLife = player.maxLife;
@@ -40,14 +60,7 @@ public class Player : Agent
         info.UpdateName(gameObject.name);
     }
 
-    private void Update()
-    {
-        UpdateAmmunition();
-        UpdateAbilities();
-        RequestDecision();
-    }
-
-    public virtual void Rotate(Vector3 movement)
+    private void Rotate(Vector3 movement)
     {
         if (movement != Vector3.zero)
         {
@@ -59,20 +72,21 @@ public class Player : Agent
     {
         // Observations
         sensor.AddObservation(this.transform.position);
-        sensor.AddObservation(mate.transform.position);
-
         sensor.AddObservation(currLife);
-        sensor.AddObservation(mate.currLife);
         sensor.AddObservation(currBullets);
-        sensor.AddObservation(mate.currBullets);
         sensor.AddObservation(healCdTimer);
-        sensor.AddObservation(mate.healCdTimer);
         sensor.AddObservation(shieldCdTimer);
-        sensor.AddObservation(mate.shieldCdTimer);
-
         sensor.AddObservation(rBody.velocity);
-    }
 
+        if (mate != null)
+        {
+            sensor.AddObservation(mate.transform.position);
+            sensor.AddObservation(mate.currLife);
+            sensor.AddObservation(mate.currBullets);
+            sensor.AddObservation(mate.healCdTimer);
+            sensor.AddObservation(mate.shieldCdTimer);
+        }
+    }
 
     public override void OnActionReceived(float[] vectorAction)
     {
@@ -87,11 +101,14 @@ public class Player : Agent
 
         // Shield
         if (vectorAction[3] == 1.0f && CanShield()) Shield(this);
-        if (vectorAction[4] == 1.0f && CanShield()) Shield(mate);
+        if (vectorAction[4] == 1.0f && CanShield() && mate != null) Shield(mate);
 
         // Heal
         if (vectorAction[5] == 1.0f && CanHeal()) Heal(this);
-        if (vectorAction[6] == 1.0f && CanHeal()) Heal(mate);
+        if (vectorAction[6] == 1.0f && CanHeal() && mate != null) Heal(mate);
+
+        // Rewards
+        CheckScore();
     }
 
     public override void Heuristic(float[] actionsOut)
@@ -125,12 +142,12 @@ public class Player : Agent
         // Shield
         shieldCdTimer -= Time.deltaTime;
         if (shieldCdTimer < 0) shieldCdTimer = 0;
-        else info.UpdateShieldUI(shieldCdTimer, shield.cooldown);
+        else info.UpdateShieldUI(shieldCdTimer, shield.cooldown + shield.timeActive);
 
         // Heal
-        if (!healing) healCdTimer -= Time.deltaTime;
+        healCdTimer -= Time.deltaTime;
         if (healCdTimer < 0) healCdTimer = 0;
-        else info.UpdateHealUI(healCdTimer, heal.cooldown);
+        else info.UpdateHealUI(healCdTimer, heal.cooldown + heal.timeActive);
     }
 
     private bool CanShield()
@@ -157,22 +174,32 @@ public class Player : Agent
 
     private void Shield(Player target)
     {
-        GameObject go = Instantiate(shield.prefab, target.gameObject.transform.position, Quaternion.identity);
-        go.GetComponent<Shield>().Use(shield.timeActive);
-        shieldCdTimer = shield.cooldown;
+        CreateParticles(shield.particles, transform.position, target, Effect.Shield);
+        shieldCdTimer = shield.cooldown + shield.timeActive;
     }
 
     private void Heal(Player target)
     {
+        CreateParticles(heal.particles, transform.position, target, Effect.Heal);
+        healCdTimer = heal.cooldown + heal.timeActive;
+    }
+
+    public void CreateShield(Player source)
+    {
+        GameObject go = Instantiate(source.shield.prefab, this.transform.position, Quaternion.identity);
+        go.GetComponent<Shield>().Use(source.shield.timeActive);
+    }
+
+    public void HealOverTime()
+    {
         StartCoroutine(HealOverTime(heal.timeActive, heal.healSecond));
-        ParticleManager.Instance.CreateHealPS(transform.position, target.gameObject.transform);
-        healCdTimer = heal.cooldown;
     }
 
     private IEnumerator HealOverTime(float timeActive, float healPerSecond)
     {
         float secondsPassed = 0;
         healing = true;
+        heal.effect.Play();
 
         while (healing && secondsPassed < timeActive)
         {
@@ -186,21 +213,50 @@ public class Player : Agent
         }
 
         healing = false;
+        heal.effect.Stop();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void CreateParticles(GameObject prefab, Vector3 initPos, Player target, Effect effect)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet Red") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Bullet Blue"))
+        GameObject go = Instantiate(prefab, initPos, Quaternion.identity);
+        go.GetComponent<ParticleToPlayer>().SetTarget(this, target, effect);
+    }
+
+    public void RecieveDamage(float damage)
+    {
+        healing = false;
+
+        if (currLife - damage <= 0)
         {
-            healing = false;
-            Bullet bullet = other.gameObject.GetComponent<Bullet>();
+            this.SetReward(-10.0f);
+            mate.SetReward(-10.0f);
 
-            if (currLife - bullet.damage >= 0) currLife -= bullet.damage;
-            else currLife = 0;
+            if (team == Team.Blue) score.AddRedScore();
+            if (team == Team.Red) score.AddBlueScore();
 
-            info.UpdateLifeUI(currLife, player.maxLife);
-            Destroy(other.gameObject);
+            ResetPlayer();
+        }
+        else currLife -= damage;
+
+        info.UpdateLifeUI(currLife, player.maxLife);
+    }
+
+    private void CheckScore()
+    {
+        if (team == Team.Blue && score.BlueScoreChanged)
+        {
+            this.SetReward(10.0f);
+            mate.SetReward(10.0f);
+
+            score.BlueScoreChanged = false;
+        }
+
+        if (team == Team.Red && score.RedScoreChanged)
+        {
+            this.SetReward(10.0f);
+            mate.SetReward(10.0f);
+
+            score.RedScoreChanged = false;
         }
     }
 }
