@@ -32,6 +32,9 @@ public class Bullet : MonoBehaviour
             other.GetComponentInParent<Player>()?.RecieveDamage(damage);
             Destroy(this.gameObject);
         }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+            Destroy(this.gameObject);
     }
 
     public float damage {get; set;}
