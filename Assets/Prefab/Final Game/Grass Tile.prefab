@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3345506204826649768}
   - component: {fileID: 1970421294969951447}
   - component: {fileID: 4627522236793094016}
+  - component: {fileID: 4807420150458335681}
   m_Layer: 15
   m_Name: Grass Tile
-  m_TagString: Untagged
+  m_TagString: grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -76,3 +77,16 @@ TerrainCollider:
   m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 106d761afa2f0974496aa04ce12e0b0e, type: 2}
   m_EnableTreeColliders: 0
+--- !u!65 &4807420150458335681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160603396915079017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 1, z: 5}
+  m_Center: {x: 2.5, y: 0, z: 2.5}

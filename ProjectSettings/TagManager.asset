@@ -32,6 +32,7 @@ TagManager:
   - blueBullet
   - redShield
   - blueShield
+  - grass
   layers:
   - Default
   - TransparentFX
@@ -49,8 +50,8 @@ TagManager:
   - Invisible Red
   - Wall
   - Grass
-  - 
-  - 
+  - Shield Blue
+  - Shield Red
   - 
   - 
   - 

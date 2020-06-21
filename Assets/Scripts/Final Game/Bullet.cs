@@ -27,13 +27,17 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Team Red") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Team Blue"))
+            other.gameObject.layer == LayerMask.NameToLayer("Team Blue") ||
+            other.gameObject.layer == LayerMask.NameToLayer("Invisible Red") ||
+            other.gameObject.layer == LayerMask.NameToLayer("Invisible Blue"))
         {
-            other.GetComponentInParent<Player>()?.RecieveDamage(damage);
+            other.GetComponentInParent<Player>().RecieveDamage(damage);
             Destroy(this.gameObject);
         }
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall") ||
+            other.gameObject.layer == LayerMask.NameToLayer("Shield Red") ||
+            other.gameObject.layer == LayerMask.NameToLayer("Shield Blue"))
             Destroy(this.gameObject);
     }
 

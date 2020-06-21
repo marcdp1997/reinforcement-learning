@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
@@ -7,11 +8,16 @@ public enum Team { Blue, Red };
 
 public class Player : Agent
 {
+    public float reward;
+
     private Rigidbody rBody;
+    private List<MeshRenderer> rendererList;
+
     private Vector3 initPosition;
+    private Quaternion initRotation;
     private int currBullets;
     private float currLife;
-    private bool healing;
+    private bool damaged;
     private float rateTimer;
     private float shieldCdTimer;
     private float healCdTimer;
@@ -20,9 +26,9 @@ public class Player : Agent
     public Score score;
     [Space(10)]
     public Team team;
-    public Transform rotationRoot;
     public Player mate;
     [Space(10)]
+    public Collider hitbox;
     public PlayerStats player;
     public ShootingStats shoot;
     public ShieldStats shield;
@@ -31,16 +37,22 @@ public class Player : Agent
     public override void Initialize()
     {
         rBody = GetComponent<Rigidbody>();
+        rendererList = new List<MeshRenderer>();
+        GetRenderers();
+
         initPosition = this.transform.position;
+        initRotation = this.transform.rotation;
     }
 
     public override void OnEpisodeBegin()
     {
         ResetPlayer();
+        score.ResetScore();
     }
 
     private void Update()
     {
+        reward = GetCumulativeReward();
         UpdateAmmunition();
         UpdateAbilities();
         RequestDecision();
@@ -49,11 +61,13 @@ public class Player : Agent
     private void ResetPlayer()
     {
         this.transform.position = initPosition;
+        this.transform.rotation = initRotation;
+
         currBullets = 3;
         rateTimer = 0;
         currLife = player.maxLife;
         shieldCdTimer = 0;
-        healing = false;
+        damaged = false;
 
         info.UpdateLifeUI(currLife, player.maxLife);
         info.UpdateBulletsUI(currBullets, rateTimer);
@@ -64,7 +78,7 @@ public class Player : Agent
     {
         if (movement != Vector3.zero)
         {
-            rotationRoot.transform.rotation = Quaternion.Lerp(rotationRoot.transform.rotation, Quaternion.LookRotation(movement), 5 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), 5 * Time.deltaTime);
         }
     }
 
@@ -105,23 +119,49 @@ public class Player : Agent
 
         // Heal
         if (vectorAction[5] == 1.0f && CanHeal()) Heal(this);
-        if (vectorAction[6] == 1.0f && CanHeal() && mate != null) Heal(mate);
-
-        // Rewards
-        CheckScore();
+        if (vectorAction[6] == 1.0f && CanHeal() && mate != null) Heal(mate);     
     }
 
     public override void Heuristic(float[] actionsOut)
     {
+        // Forward, backwards, no action
         actionsOut[0] = Input.GetAxis("Horizontal");
+
+        // Left, Right, no action
         actionsOut[1] = Input.GetAxis("Vertical");
+
+        // Shoot, no action
         actionsOut[2] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
+
+        // Use ability, no action (x4)
         actionsOut[3] = Input.GetKeyDown(KeyCode.O) ? 1.0f : 0.0f;
         actionsOut[4] = Input.GetKeyDown(KeyCode.P) ? 1.0f : 0.0f;
         actionsOut[5] = Input.GetKeyDown(KeyCode.K) ? 1.0f : 0.0f;
         actionsOut[6] = Input.GetKeyDown(KeyCode.L) ? 1.0f : 0.0f;
     }
 
+    public void RecieveDamage(float damage)
+    {
+        StartCoroutine(VisibleDueToDamage());
+
+        if (currLife - damage <= 0)
+        {
+            this.SetReward(-10.0f);
+            mate.SetReward(-10.0f);
+
+            if (team == Team.Blue) score.AddRedScore();
+            if (team == Team.Red) score.AddBlueScore();
+
+            ResetPlayer();
+        }
+        else currLife -= damage;
+
+        info.UpdateLifeUI(currLife, player.maxLife);
+    }
+
+    // ----------------------------------------------------------------------------------
+    #region Shooting
+    // ----------------------------------------------------------------------------------
     private void UpdateAmmunition()
     {
         if (currBullets < 3)
@@ -137,6 +177,21 @@ public class Player : Agent
         }
     }
 
+    private bool CanShoot()
+    {
+        return currBullets > 0 ? true : false;
+    }
+
+    private void Shoot()
+    {
+        GameObject go = Instantiate(shoot.prefab, shoot.firePoint.position, Quaternion.identity);
+        go.GetComponent<Bullet>().Shoot(shoot.speed, shoot.firePoint.forward, shoot.timeActive, player.damage);
+        currBullets--;
+    }
+    #endregion
+    // ----------------------------------------------------------------------------------
+    #region Abilities
+    // ----------------------------------------------------------------------------------
     private void UpdateAbilities()
     {
         // Shield
@@ -158,18 +213,6 @@ public class Player : Agent
     private bool CanHeal()
     {
         return healCdTimer == 0 ? true : false;
-    }
-
-    private bool CanShoot()
-    {
-        return currBullets > 0 ? true : false;
-    }
-
-    private void Shoot()
-    {
-        GameObject go = Instantiate(shoot.prefab, shoot.firePoint.position, Quaternion.identity);
-        go.GetComponent<Bullet>().Shoot(shoot.speed, shoot.firePoint.forward, shoot.timeActive, player.damage);
-        currBullets--;
     }
 
     private void Shield(Player target)
@@ -198,10 +241,9 @@ public class Player : Agent
     private IEnumerator HealOverTime(float timeActive, float healPerSecond)
     {
         float secondsPassed = 0;
-        healing = true;
         heal.effect.Play();
 
-        while (healing && secondsPassed < timeActive)
+        while (secondsPassed < timeActive)
         {
             yield return new WaitForSeconds(1.0f);
             secondsPassed += 1.0f;
@@ -212,7 +254,6 @@ public class Player : Agent
             info.UpdateLifeUI(currLife, player.maxLife);
         }
 
-        healing = false;
         heal.effect.Stop();
     }
 
@@ -221,42 +262,76 @@ public class Player : Agent
         GameObject go = Instantiate(prefab, initPos, Quaternion.identity);
         go.GetComponent<ParticleToPlayer>().SetTarget(this, target, effect);
     }
-
-    public void RecieveDamage(float damage)
+    #endregion    
+    // ----------------------------------------------------------------------------------
+    #region Grass
+    // ----------------------------------------------------------------------------------
+    private void Invisible()
     {
-        healing = false;
+        if (team == Team.Blue) hitbox.gameObject.layer = LayerMask.NameToLayer("Invisible Blue");
 
-        if (currLife - damage <= 0)
+        if (team == Team.Red)
         {
-            this.SetReward(-10.0f);
-            mate.SetReward(-10.0f);
-
-            if (team == Team.Blue) score.AddRedScore();
-            if (team == Team.Red) score.AddBlueScore();
-
-            ResetPlayer();
+            hitbox.gameObject.layer = LayerMask.NameToLayer("Invisible Red");
+            SetAllRenderersEnabled(false);
         }
-        else currLife -= damage;
-
-        info.UpdateLifeUI(currLife, player.maxLife);
     }
 
-    private void CheckScore()
+    private void Visible()
     {
-        if (team == Team.Blue && score.BlueScoreChanged)
+        if (team == Team.Blue) hitbox.gameObject.layer = LayerMask.NameToLayer("Team Blue");
+
+        if (team == Team.Red)
         {
-            this.SetReward(10.0f);
-            mate.SetReward(10.0f);
-
-            score.BlueScoreChanged = false;
-        }
-
-        if (team == Team.Red && score.RedScoreChanged)
-        {
-            this.SetReward(10.0f);
-            mate.SetReward(10.0f);
-
-            score.RedScoreChanged = false;
+            hitbox.gameObject.layer = LayerMask.NameToLayer("Team Red");
+            SetAllRenderersEnabled(true);
         }
     }
+
+    private IEnumerator VisibleDueToDamage()
+    {
+        damaged = true;
+        Visible();
+
+        yield return new WaitForSeconds(1.0f);
+
+        damaged = false;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!damaged && other.gameObject.layer == LayerMask.NameToLayer("Grass"))
+        {
+            Invisible();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Grass"))
+        {
+            Visible();
+        }
+    }
+    #endregion
+    // ----------------------------------------------------------------------------------
+    #region Utils
+    // ----------------------------------------------------------------------------------
+    private void GetRenderers()
+    {
+        foreach (MeshRenderer objectRenderer in GetComponentsInChildren<MeshRenderer>())
+        {
+            rendererList.Add(objectRenderer);
+        }
+    }
+
+    private void SetAllRenderersEnabled(bool enabled)
+    {
+        for (int i = 0; i < rendererList.Count; i++)
+        {
+            rendererList[i].enabled = enabled;
+        }
+    }
+    #endregion
+    // ----------------------------------------------------------------------------------
 }
