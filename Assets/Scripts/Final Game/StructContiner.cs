@@ -7,6 +7,7 @@ public struct PlayerStats
     public float speed;
     public float damage;
     public float maxLife;
+    public int maxBullets;
 }
 
 [Serializable]

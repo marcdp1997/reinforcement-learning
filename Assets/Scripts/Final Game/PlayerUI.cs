@@ -21,9 +21,9 @@ public class PlayerUI : MonoBehaviour
         lifeBar.fillAmount = currLife / maxLife;
     }
 
-    public void UpdateBulletsUI(int currBullets, float rateTimer)
+    public void UpdateBulletsUI(int currBullets, int maxBullets, float rateTimer)
     {
-        bulletsBar.fillAmount = (currBullets + rateTimer) / 3;
+        bulletsBar.fillAmount = (currBullets + rateTimer) / maxBullets;
     }
 
     public void UpdateShieldUI(float cooldownTimer, float cooldown)

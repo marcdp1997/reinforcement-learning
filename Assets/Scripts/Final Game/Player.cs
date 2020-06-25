@@ -4,15 +4,21 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
+// Note that that the detectable tags are different for the blue and red teams. 
+// The order is:
+// * wall
+// * own teammate
+// * opposing player
+// * opposing bullet
+
 public enum Team { Blue, Red };
 
 public class Player : Agent
 {
-    public float reward;
+    public float reward = 0;
 
     private Rigidbody rBody;
     private List<MeshRenderer> rendererList;
-
     private Vector3 initPosition;
     private Quaternion initRotation;
     private int currBullets;
@@ -21,6 +27,9 @@ public class Player : Agent
     private float rateTimer;
     private float shieldCdTimer;
     private float healCdTimer;
+
+    private float existencialPenalty;
+    [HideInInspector] public float timePenalty;
 
     public PlayerUI info;
     public Score score;
@@ -42,6 +51,8 @@ public class Player : Agent
 
         initPosition = this.transform.position;
         initRotation = this.transform.rotation;
+
+        existencialPenalty = 1f / MaxStep;
     }
 
     public override void OnEpisodeBegin()
@@ -55,23 +66,91 @@ public class Player : Agent
         reward = GetCumulativeReward();
         UpdateAmmunition();
         UpdateAbilities();
-        RequestDecision();
     }
 
     private void ResetPlayer()
     {
         this.transform.position = initPosition;
         this.transform.rotation = initRotation;
+        rBody.velocity = Vector3.zero;
 
-        currBullets = 3;
+        currBullets = 0;
         rateTimer = 0;
         currLife = player.maxLife;
         shieldCdTimer = 0;
         damaged = false;
+        timePenalty = 0;
 
         info.UpdateLifeUI(currLife, player.maxLife);
-        info.UpdateBulletsUI(currBullets, rateTimer);
+        info.UpdateBulletsUI(currBullets, player.maxBullets, rateTimer);
         info.UpdateName(gameObject.name);
+    }
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+
+    }
+
+    public override void OnActionReceived(float[] vectorAction)
+    {
+        //AddReward(-existencialPenalty);
+
+        // Movement
+        float forward = 0.0f, right = 0.0f;
+
+        switch (vectorAction[0])
+        {
+            case 1:
+                forward = 1;
+                break;
+            case 2:
+                forward = -1;
+                break;
+        }
+
+        switch (vectorAction[1])
+        {
+            case 1:
+                right = -1;
+                break;
+            case 2:
+                right = 1;
+                break;
+        }
+
+        Vector3 movement = new Vector3(right, 0, forward);
+        movement = movement.normalized * player.speed;
+        rBody.velocity = movement;
+        Rotate(movement);
+
+        // Shoot
+        if (vectorAction[2] == 1.0f && CanShoot()) Shoot();
+    }
+
+    public override void Heuristic(float[] actionsOut)
+    {
+        // Forward, backwards, no action
+        if (Input.GetKey(KeyCode.W))
+        {
+            actionsOut[0] = 1f;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            actionsOut[0] = 2f;
+        }
+
+        // Left, Right, no action
+        if (Input.GetKey(KeyCode.A))
+        {
+            actionsOut[1] = 1f;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            actionsOut[1] = 2f;
+        }
+
+        // Shoot, no action
+        actionsOut[2] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
     }
 
     private void Rotate(Vector3 movement)
@@ -82,73 +161,12 @@ public class Player : Agent
         }
     }
 
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        // Observations
-        sensor.AddObservation(this.transform.position);
-        sensor.AddObservation(currLife);
-        sensor.AddObservation(currBullets);
-        sensor.AddObservation(healCdTimer);
-        sensor.AddObservation(shieldCdTimer);
-        sensor.AddObservation(rBody.velocity);
-
-        if (mate != null)
-        {
-            sensor.AddObservation(mate.transform.position);
-            sensor.AddObservation(mate.currLife);
-            sensor.AddObservation(mate.currBullets);
-            sensor.AddObservation(mate.healCdTimer);
-            sensor.AddObservation(mate.shieldCdTimer);
-        }
-    }
-
-    public override void OnActionReceived(float[] vectorAction)
-    {
-        // Movement
-        Vector3 movement = new Vector3(vectorAction[0], 0, vectorAction[1]);
-        movement = movement.normalized * player.speed;
-        rBody.velocity = movement;
-        Rotate(movement);
-
-        // Shoot
-        if (vectorAction[2] == 1.0f && CanShoot()) Shoot();
-
-        // Shield
-        if (vectorAction[3] == 1.0f && CanShield()) Shield(this);
-        if (vectorAction[4] == 1.0f && CanShield() && mate != null) Shield(mate);
-
-        // Heal
-        if (vectorAction[5] == 1.0f && CanHeal()) Heal(this);
-        if (vectorAction[6] == 1.0f && CanHeal() && mate != null) Heal(mate);     
-    }
-
-    public override void Heuristic(float[] actionsOut)
-    {
-        // Forward, backwards, no action
-        actionsOut[0] = Input.GetAxis("Horizontal");
-
-        // Left, Right, no action
-        actionsOut[1] = Input.GetAxis("Vertical");
-
-        // Shoot, no action
-        actionsOut[2] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
-
-        // Use ability, no action (x4)
-        actionsOut[3] = Input.GetKeyDown(KeyCode.O) ? 1.0f : 0.0f;
-        actionsOut[4] = Input.GetKeyDown(KeyCode.P) ? 1.0f : 0.0f;
-        actionsOut[5] = Input.GetKeyDown(KeyCode.K) ? 1.0f : 0.0f;
-        actionsOut[6] = Input.GetKeyDown(KeyCode.L) ? 1.0f : 0.0f;
-    }
-
     public void RecieveDamage(float damage)
     {
         StartCoroutine(VisibleDueToDamage());
 
         if (currLife - damage <= 0)
         {
-            this.SetReward(-10.0f);
-            mate.SetReward(-10.0f);
-
             if (team == Team.Blue) score.AddRedScore();
             if (team == Team.Red) score.AddBlueScore();
 
@@ -164,10 +182,10 @@ public class Player : Agent
     // ----------------------------------------------------------------------------------
     private void UpdateAmmunition()
     {
-        if (currBullets < 3)
+        if (currBullets < player.maxBullets)
         {
             rateTimer += Time.deltaTime / shoot.rateRecover;
-            info.UpdateBulletsUI(currBullets, rateTimer);
+            info.UpdateBulletsUI(currBullets, player.maxBullets, rateTimer);
 
             if (rateTimer >= 1.0f)
             {
