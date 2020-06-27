@@ -93,10 +93,9 @@ public class Player : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
-        //AddReward(-existencialPenalty);
-
         // Movement
         float forward = 0.0f, right = 0.0f;
+        Vector3 rotateDir = Vector3.zero;
 
         switch (vectorAction[0])
         {
@@ -118,13 +117,25 @@ public class Player : Agent
                 break;
         }
 
+        // Rotation
+        switch (vectorAction[2])
+        {
+            case 1:
+                rotateDir = transform.up * -1f;
+                break;
+            case 2:
+                rotateDir = transform.up * 1f;
+                break;
+        }
+
         Vector3 movement = new Vector3(right, 0, forward);
         movement = movement.normalized * player.speed;
         rBody.velocity = movement;
-        Rotate(movement);
+        Rotate(rotateDir);
 
         // Shoot
-        if (vectorAction[2] == 1.0f && CanShoot()) Shoot();
+        if (vectorAction[3] == 1.0f && CanShoot())
+            Shoot();
     }
 
     public override void Heuristic(float[] actionsOut)
@@ -149,26 +160,36 @@ public class Player : Agent
             actionsOut[1] = 2f;
         }
 
+        // Rotate right, left, no action
+        if (Input.GetKey(KeyCode.Q))
+        {
+            actionsOut[2] = 1f;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            actionsOut[2] = 2f;
+        }
+
         // Shoot, no action
-        actionsOut[2] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
+        actionsOut[3] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
     }
 
-    private void Rotate(Vector3 movement)
+    private void Rotate(Vector3 dirToLook)
     {
-        if (movement != Vector3.zero)
+        if (dirToLook != Vector3.zero)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), 5 * Time.deltaTime);
+            transform.Rotate(dirToLook, Time.deltaTime * 100f);
         }
     }
 
-    public void RecieveDamage(float damage)
+    public void RecieveDamage(Player source, float damage)
     {
         StartCoroutine(VisibleDueToDamage());
 
         if (currLife - damage <= 0)
         {
-            if (team == Team.Blue) score.AddRedScore();
-            if (team == Team.Red) score.AddBlueScore();
+            if (source.team == Team.Red) score.AddRedScore();
+            if (source.team == Team.Blue) score.AddBlueScore();
 
             ResetPlayer();
         }
@@ -203,7 +224,7 @@ public class Player : Agent
     private void Shoot()
     {
         GameObject go = Instantiate(shoot.prefab, shoot.firePoint.position, Quaternion.identity);
-        go.GetComponent<Bullet>().Shoot(shoot.speed, shoot.firePoint.forward, shoot.timeActive, player.damage);
+        go.GetComponent<Bullet>().Shoot(this, shoot.speed, shoot.firePoint.forward, shoot.timeActive, player.damage);
         currBullets--;
     }
     #endregion
