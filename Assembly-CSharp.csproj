@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scripts\Distributed\AgentDistributed.cs" />
     <Compile Include="Assets\Scripts\Distributed\Target.cs" />
     <Compile Include="Assets\Scripts\Final Game\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Final Game\ParticleToPlayer.cs" />
     <Compile Include="Assets\Scripts\Final Game\Player.cs" />
     <Compile Include="Assets\Scripts\Final Game\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\Final Game\Score.cs" />

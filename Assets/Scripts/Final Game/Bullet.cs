@@ -11,9 +11,8 @@ public class Bullet : MonoBehaviour
         rBody = GetComponent<Rigidbody>();
     }
 
-    public void Shoot(Player source, float bulletSpeed, Vector3 direction, float timeActive, float damage)
+    public void Shoot(Player source, float bulletSpeed, Vector3 direction, float timeActive)
     {
-        this.damage = damage;
         this.source = source;
 
         rBody.velocity = new Vector3(direction.x, 0.0f, direction.z).normalized * bulletSpeed;
@@ -29,12 +28,13 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Team Red") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Team Blue") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Invisible Red") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Invisible Blue"))
+            other.gameObject.layer == LayerMask.NameToLayer("Team Blue"))
         {
-            other.GetComponentInParent<Player>().RecieveDamage(source, damage);
-            Destroy(this.gameObject);
+            if (other != source.player.hitbox)
+            {
+                other.GetComponentInParent<Player>().RecieveDamage(source);
+                Destroy(this.gameObject);
+            }
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall") ||
@@ -42,6 +42,4 @@ public class Bullet : MonoBehaviour
             other.gameObject.layer == LayerMask.NameToLayer("Shield Blue"))
             Destroy(this.gameObject);
     }
-
-    public float damage { get; set; }
 }

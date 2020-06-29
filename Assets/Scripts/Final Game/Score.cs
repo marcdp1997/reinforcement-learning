@@ -27,14 +27,14 @@ public class Score : MonoBehaviour
 
         if (MatchIsOver())
         {
-            AddReward(1.0f, Team.Blue);
-            AddReward(-1.0f, Team.Red);
+            //AddReward(1.0f, Team.Blue);
+            //AddReward(-1.0f, Team.Red);
             EndGame();
         }
         else
         {
-            AddReward(1.0f / maxScore, Team.Blue);
-            AddReward(-1.0f / maxScore, Team.Red);
+            //AddReward(1.0f / maxScore, Team.Blue);
+            //AddReward(-1.0f / maxScore, Team.Red);
         }
     }
 
@@ -45,14 +45,14 @@ public class Score : MonoBehaviour
 
         if (MatchIsOver())
         {
-            AddReward(1.0f, Team.Red);
-            AddReward(-1.0f, Team.Blue);
+            //AddReward(1.0f, Team.Red);
+            //AddReward(-1.0f, Team.Blue);
             EndGame();
         }
         else
         {
-            AddReward(1.0f / maxScore, Team.Red);
-            AddReward(-1.0f / maxScore, Team.Blue);
+            //AddReward(1.0f / maxScore, Team.Red);
+            //AddReward(-1.0f / maxScore, Team.Blue);
         }
     }
 
