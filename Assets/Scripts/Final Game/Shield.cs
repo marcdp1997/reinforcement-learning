@@ -11,6 +11,16 @@ public class Shield : MonoBehaviour
     private IEnumerator CheckTimeActive(float timeActive)
     {
         yield return new WaitForSeconds(timeActive);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    public void ResetShield()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -13,7 +13,7 @@ public struct PlayerStats
 [Serializable]
 public struct ShootingStats
 {
-    public GameObject prefab;
+    public BulletPool pool;
     public Transform firePoint;
     public float damage;
     public float rateRecover;

@@ -19,10 +19,15 @@ public class Bullet : MonoBehaviour
         StartCoroutine(CheckTimeActive(timeActive));
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     private IEnumerator CheckTimeActive(float timeActive)
     {
         yield return new WaitForSeconds(timeActive);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,13 +38,18 @@ public class Bullet : MonoBehaviour
             if (other != source.player.hitbox)
             {
                 other.GetComponentInParent<Player>().RecieveDamage(source);
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
             }
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall") ||
             other.gameObject.layer == LayerMask.NameToLayer("Shield Red") ||
             other.gameObject.layer == LayerMask.NameToLayer("Shield Blue"))
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+    }
+
+    public void ResetBullet()
+    {
+        gameObject.SetActive(false);
     }
 }

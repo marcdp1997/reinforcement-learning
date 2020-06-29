@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.MLAgents;
+﻿using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -19,6 +17,7 @@ public class Player : Agent
 {
     public float reward = 0;
 
+    private Shield shieldBH;
     private Vector3 initPosition;
     private Quaternion initRotation;
     private Rigidbody rBody;
@@ -41,6 +40,7 @@ public class Player : Agent
     public override void Initialize()
     {
         rBody = GetComponent<Rigidbody>();
+        shieldBH = Instantiate(shield.prefab, this.transform.position, Quaternion.identity).GetComponent<Shield>();
 
         initPosition = this.transform.position;
         initRotation = this.transform.rotation;
@@ -50,6 +50,8 @@ public class Player : Agent
     {
         ResetPlayer();
         score.ResetScore();
+        shoot.pool.ResetBullets();
+        shieldBH.ResetShield();
     }
 
     private void Update()
@@ -69,6 +71,7 @@ public class Player : Agent
         rateTimer = 0;
         currLife = player.maxLife;
         shieldCdTimer = 0;
+        shieldBH.gameObject.SetActive(false);
 
         info.UpdateLifeUI(currLife, player.maxLife);
         info.UpdateBulletsUI(currBullets, player.maxBullets, rateTimer);
@@ -81,6 +84,7 @@ public class Player : Agent
 
         sensor.AddObservation(currLife / this.player.maxLife);
         sensor.AddObservation(mate.currLife / mate.player.maxLife);
+        sensor.AddObservation(shieldCdTimer / shield.cooldown);
     }
 
     public override void OnActionReceived(float[] vectorAction)
@@ -199,9 +203,6 @@ public class Player : Agent
                 ResetPlayer();
             }
             else currLife -= damage;
-
-            source.AddReward(damage / player.maxLife);
-            this.AddReward(-damage / player.maxLife);
         }
         // Hitting teammate (heal)
         else
@@ -210,7 +211,6 @@ public class Player : Agent
 
             if (currLife != player.maxLife)
             {
-                source.AddReward(damage / player.maxLife);
                 heal.effect.Play();
             }
 
@@ -249,8 +249,15 @@ public class Player : Agent
 
     private void Shoot()
     {
-        GameObject go = Instantiate(shoot.prefab, shoot.firePoint.position, Quaternion.identity);
-        go.GetComponent<Bullet>().Shoot(this, shoot.speed, shoot.firePoint.forward, shoot.timeActive);
+        Bullet bullet;
+
+        if (team == Team.Blue) bullet = shoot.pool.GetBlueBullet();
+        else bullet = shoot.pool.GetRedBullet();
+
+        bullet.gameObject.SetActive(true);
+        bullet.transform.position = shoot.firePoint.position;
+        bullet.Shoot(this, shoot.speed, shoot.firePoint.forward, shoot.timeActive);
+
         currBullets--;
     }
     #endregion
@@ -273,8 +280,10 @@ public class Player : Agent
     public void Shield(Player source)
     {
         shieldCdTimer = shield.cooldown + shield.timeActive;
-        GameObject go = Instantiate(source.shield.prefab, this.transform.position, Quaternion.identity);
-        go.GetComponent<Shield>().Use(source.shield.timeActive);
+
+        shieldBH.gameObject.SetActive(true);
+        shieldBH.transform.position = transform.position;
+        shieldBH.Use(source.shield.timeActive);
     }
     #endregion    
     // ----------------------------------------------------------------------------------

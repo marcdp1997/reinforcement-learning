@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2468769126957436657
 Transform:
   m_ObjectHideFlags: 0
@@ -1231,7 +1231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472779437107650822}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -5.95, y: 3.4, z: 13.54}
+  m_LocalPosition: {x: -4.89, y: 3.4, z: 13.54}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 6020699861607033628}
@@ -1240,7 +1240,7 @@ Transform:
   - {fileID: 2888638310758367987}
   - {fileID: 1876520666248585762}
   m_Father: {fileID: 2292677075081241233}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &5256021276911446479
 MeshFilter:
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 6000
+  MaxStep: 1000
   reward: 0
   info: {fileID: 2511035843770766574}
   score: {fileID: 2292677075656460305}
@@ -1316,8 +1316,7 @@ MonoBehaviour:
     maxLife: 400
     maxBullets: 1
   shoot:
-    prefab: {fileID: 4378434873901315536, guid: 2f028cc811d32cb48ad3703324566fa2,
-      type: 3}
+    pool: {fileID: 2149839586833690076}
     firePoint: {fileID: 8765714466745526399}
     damage: 200
     rateRecover: 2
@@ -1344,8 +1343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 2
-    NumStackedVectorObservations: 5
+    VectorObservationSize: 3
+    NumStackedVectorObservations: 1
     VectorActionSize: 0300000003000000030000000200000002000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
@@ -1383,7 +1382,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 214784
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -1463,7 +1462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472779437536096072}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -9.85, y: 3.4, z: 13.6}
+  m_LocalPosition: {x: -0.85, y: 3.4, z: 13.6}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 6020699861984159058}
@@ -1472,7 +1471,7 @@ Transform:
   - {fileID: 2888638310933974205}
   - {fileID: 2398250947597829822}
   m_Father: {fileID: 2292677075081241233}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &5256021276751308673
 MeshFilter:
@@ -1536,7 +1535,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 6000
+  MaxStep: 1000
   reward: 0
   info: {fileID: 2511035844774400829}
   score: {fileID: 2292677075656460305}
@@ -1548,8 +1547,7 @@ MonoBehaviour:
     maxLife: 400
     maxBullets: 1
   shoot:
-    prefab: {fileID: 4378434873901315536, guid: 2f028cc811d32cb48ad3703324566fa2,
-      type: 3}
+    pool: {fileID: 2149839586833690076}
     firePoint: {fileID: 8765714467171673649}
     damage: 66
     rateRecover: 2
@@ -1576,8 +1574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 2
-    NumStackedVectorObservations: 5
+    VectorObservationSize: 3
+    NumStackedVectorObservations: 1
     VectorActionSize: 0300000003000000030000000200000002000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
@@ -1615,7 +1613,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 214784
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -1695,7 +1693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472779437544357592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.75, y: 3.4, z: -5}
+  m_LocalPosition: {x: -4.76, y: 3.4, z: -8.13}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 8957500987330436096}
@@ -1704,7 +1702,7 @@ Transform:
   - {fileID: 1870170799214487526}
   - {fileID: 4975037369376374742}
   m_Father: {fileID: 2292677075081241233}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3083554130412452905
 MeshFilter:
@@ -1768,7 +1766,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 6000
+  MaxStep: 1000
   reward: 0
   info: {fileID: 2511035843308218019}
   score: {fileID: 2292677075656460305}
@@ -1780,8 +1778,7 @@ MonoBehaviour:
     maxLife: 400
     maxBullets: 1
   shoot:
-    prefab: {fileID: 4378434873901315536, guid: fe25c631743e5b2439f4062750b6261c,
-      type: 3}
+    pool: {fileID: 2149839586833690076}
     firePoint: {fileID: 8765714467180197793}
     damage: 66
     rateRecover: 2
@@ -1808,8 +1805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 2
-    NumStackedVectorObservations: 5
+    VectorObservationSize: 3
+    NumStackedVectorObservations: 1
     VectorActionSize: 0300000003000000030000000200000002000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
@@ -1847,7 +1844,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 215808
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -1927,7 +1924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472779438305277342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.72, y: 3.4, z: -8.08}
+  m_LocalPosition: {x: -1.08, y: 3.4, z: -8.08}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 8957500986569611078}
@@ -1936,7 +1933,7 @@ Transform:
   - {fileID: 1870170798447602848}
   - {fileID: 657051171411073077}
   m_Father: {fileID: 2292677075081241233}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3083554129630984047
 MeshFilter:
@@ -2000,7 +1997,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 6000
+  MaxStep: 1000
   reward: 0
   info: {fileID: 3214824220203434107}
   score: {fileID: 2292677075656460305}
@@ -2012,8 +2009,7 @@ MonoBehaviour:
     maxLife: 400
     maxBullets: 1
   shoot:
-    prefab: {fileID: 4378434873901315536, guid: fe25c631743e5b2439f4062750b6261c,
-      type: 3}
+    pool: {fileID: 2149839586833690076}
     firePoint: {fileID: 8765714465799601383}
     damage: 200
     rateRecover: 2
@@ -2040,8 +2036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 2
-    NumStackedVectorObservations: 5
+    VectorObservationSize: 3
+    NumStackedVectorObservations: 1
     VectorActionSize: 0300000003000000030000000200000002000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
@@ -2079,7 +2075,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 215808
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -3113,6 +3109,7 @@ Transform:
   m_Children:
   - {fileID: 2292677075656460318}
   - {fileID: 2292677074762236290}
+  - {fileID: 5906270429719770586}
   - {fileID: 469792980224066696}
   - {fileID: 469792978920116174}
   - {fileID: 469792980232328472}
@@ -3392,7 +3389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c9023551e2382489dff984d012bb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScore: 3
+  maxScore: 1
   players:
   - {fileID: 472779437544357593}
   - {fileID: 472779438305277343}
@@ -3703,7 +3700,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 214784
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -3840,7 +3837,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 215808
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -3903,7 +3900,7 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 215808
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -3935,8 +3932,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5755417288815464250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7, y: -0.99, z: -0.61}
-  m_LocalScale: {x: 5, y: 4, z: 2.5}
+  m_LocalPosition: {x: 0, y: 0, z: -2.79}
+  m_LocalScale: {x: 6, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 2292677074762236290}
   m_RootOrder: 5
@@ -4788,11 +4785,59 @@ MonoBehaviour:
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 214784
-  m_ObservationStacks: 5
+  m_ObservationStacks: 3
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 0
+--- !u!1 &8247208708240439980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5906270429719770586}
+  - component: {fileID: 2149839586833690076}
+  m_Layer: 0
+  m_Name: Bullets Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5906270429719770586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247208708240439980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2292677075081241233}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2149839586833690076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247208708240439980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967f25f1aba0d4841bf5a504ff6fe893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redBulletPrefab: {fileID: 4378434873901315536, guid: 2f028cc811d32cb48ad3703324566fa2,
+    type: 3}
+  blueBulletPrefab: {fileID: 4378434873901315536, guid: fe25c631743e5b2439f4062750b6261c,
+    type: 3}
+  pooledBullets: 8
 --- !u!1 &8765714465799601382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5231,6 +5276,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5157cf4d5ba042249a2abf99bad33980, type: 3}
+--- !u!224 &3402546750192880279 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4516226183866801769, guid: 5157cf4d5ba042249a2abf99bad33980,
+    type: 3}
+  m_PrefabInstance: {fileID: 1266811069420721406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3214824220203434107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4398262482508354693, guid: 5157cf4d5ba042249a2abf99bad33980,
@@ -5243,12 +5294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51bdbeebc0406b479441fe6ecaf5020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &3402546750192880279 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4516226183866801769, guid: 5157cf4d5ba042249a2abf99bad33980,
-    type: 3}
-  m_PrefabInstance: {fileID: 1266811069420721406}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1438811231327507069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5323,15 +5368,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b92e26e3811703442974bc838b842a64, type: 3}
---- !u!198 &8957500987330436099 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8050395996340145790, guid: b92e26e3811703442974bc838b842a64,
-    type: 3}
-  m_PrefabInstance: {fileID: 1438811231327507069}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8957500987330436096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8050395996340145789, guid: b92e26e3811703442974bc838b842a64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1438811231327507069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8957500987330436099 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8050395996340145790, guid: b92e26e3811703442974bc838b842a64,
     type: 3}
   m_PrefabInstance: {fileID: 1438811231327507069}
   m_PrefabAsset: {fileID: 0}
@@ -5677,12 +5722,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5157cf4d5ba042249a2abf99bad33980, type: 3}
---- !u!224 &2413333939535567313 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4516226183866801769, guid: 5157cf4d5ba042249a2abf99bad33980,
-    type: 3}
-  m_PrefabInstance: {fileID: 2292677075684526008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2511035844774400829 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4398262482508354693, guid: 5157cf4d5ba042249a2abf99bad33980,
@@ -5695,6 +5734,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51bdbeebc0406b479441fe6ecaf5020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2413333939535567313 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4516226183866801769, guid: 5157cf4d5ba042249a2abf99bad33980,
+    type: 3}
+  m_PrefabInstance: {fileID: 2292677075684526008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2292677076349514278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6095,15 +6140,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 540f3239c65d647428a4123f0521c2dc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b92e26e3811703442974bc838b842a64, type: 3}
---- !u!4 &6020699861984159058 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8050395996340145789, guid: b92e26e3811703442974bc838b842a64,
-    type: 3}
-  m_PrefabInstance: {fileID: 4338393750659918639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &6020699861984159057 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8050395996340145790, guid: b92e26e3811703442974bc838b842a64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4338393750659918639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6020699861984159058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8050395996340145789, guid: b92e26e3811703442974bc838b842a64,
     type: 3}
   m_PrefabInstance: {fileID: 4338393750659918639}
   m_PrefabAsset: {fileID: 0}
@@ -6176,15 +6221,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b92e26e3811703442974bc838b842a64, type: 3}
---- !u!198 &6020699861607033631 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8050395996340145790, guid: b92e26e3811703442974bc838b842a64,
-    type: 3}
-  m_PrefabInstance: {fileID: 4338393751018825057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6020699861607033628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8050395996340145789, guid: b92e26e3811703442974bc838b842a64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4338393751018825057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6020699861607033631 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8050395996340145790, guid: b92e26e3811703442974bc838b842a64,
     type: 3}
   m_PrefabInstance: {fileID: 4338393751018825057}
   m_PrefabAsset: {fileID: 0}

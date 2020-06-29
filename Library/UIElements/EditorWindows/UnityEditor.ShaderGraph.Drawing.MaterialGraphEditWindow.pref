@@ -20,5 +20,5 @@ MonoBehaviour:
   m_Values:
   - '{}'
   - '{}'
-  - '{"position":{"x":363.0,"y":467.0,"z":0.0},"scale":{"x":0.3218916952610016,"y":0.3218916952610016,"z":1.0}}'
-  - '{"m_Version":0,"m_SelectedElementsArray":[]}'
+  - '{"position":{"x":382.0,"y":468.0,"z":0.0},"scale":{"x":0.34057971835136416,"y":0.34057971835136416,"z":1.0}}'
+  - '{"m_Version":2,"m_SelectedElementsArray":[]}'
