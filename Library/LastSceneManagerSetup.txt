@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/FinalGame.unity
+- path: Assets/Scenes/Distributed.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

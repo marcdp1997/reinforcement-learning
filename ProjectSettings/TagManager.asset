@@ -30,9 +30,8 @@ TagManager:
   - redAgent
   - redBullet
   - blueBullet
-  - redShield
-  - blueShield
   - grass
+  - shield
   layers:
   - Default
   - TransparentFX
@@ -49,9 +48,9 @@ TagManager:
   - 
   - 
   - Wall
+  - Blue Shield
+  - Red Shield
   - 
-  - Shield Blue
-  - Shield Red
   - 
   - 
   - 

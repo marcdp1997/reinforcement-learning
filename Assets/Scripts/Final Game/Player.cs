@@ -8,8 +8,6 @@ using UnityEngine;
 // * own teammate
 // * opposing player
 // * opposing bullet
-// * opposing shield
-// * own shield
 
 public enum Team { Blue, Red };
 
@@ -24,7 +22,6 @@ public class Player : Agent
     private int currBullets;
     private float currLife;
     private float rateTimer;
-    private float shieldCdTimer;
 
     public PlayerUI info;
     public Score score;
@@ -51,14 +48,12 @@ public class Player : Agent
         ResetPlayer();
         score.ResetScore();
         shoot.pool.ResetBullets();
-        shieldBH.ResetShield();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        reward = GetCumulativeReward();
         UpdateAmmunition();
-        UpdateShieldCd();
+        UpdateShieldPosition();
     }
 
     private void ResetPlayer()
@@ -70,27 +65,15 @@ public class Player : Agent
         currBullets = 0;
         rateTimer = 0;
         currLife = player.maxLife;
-        shieldCdTimer = 0;
-        shieldBH.gameObject.SetActive(false);
+        shieldBH.Use(shield.timeActive);
 
         info.UpdateLifeUI(currLife, player.maxLife);
         info.UpdateBulletsUI(currBullets, player.maxBullets, rateTimer);
         info.UpdateName(gameObject.name);
     }
 
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        base.CollectObservations(sensor);
-
-        sensor.AddObservation(currLife / this.player.maxLife);
-        sensor.AddObservation(mate.currLife / mate.player.maxLife);
-        sensor.AddObservation(shieldCdTimer / shield.cooldown);
-    }
-
     public override void OnActionReceived(float[] vectorAction)
     {
-        base.OnActionReceived(vectorAction);
-
         // Movement
         float forward = 0.0f, right = 0.0f;
         Vector3 rotateDir = Vector3.zero;
@@ -134,10 +117,6 @@ public class Player : Agent
         // Shoot
         if (vectorAction[3] == 1.0f && CanShoot())
             Shoot();
-
-        // Shield
-        if (vectorAction[4] == 1.0f && CanShield())
-            Shield(this);
     }
 
     public override void Heuristic(float[] actionsOut)
@@ -174,9 +153,6 @@ public class Player : Agent
 
         // Shoot, no action
         actionsOut[3] = Input.GetMouseButtonDown(0) ? 1.0f : 0.0f;
-
-        // Shield, no action
-        actionsOut[4] = Input.GetKey(KeyCode.O) ? 1.0f : 0.0f;
     }
 
     private void Rotate(Vector3 dirToLook)
@@ -264,26 +240,16 @@ public class Player : Agent
     // ----------------------------------------------------------------------------------
     #region Shield
     // ----------------------------------------------------------------------------------
-    private void UpdateShieldCd()
+    private void UpdateShieldPosition()
     {
-        // Shield
-        shieldCdTimer -= Time.deltaTime;
-        if (shieldCdTimer < 0) shieldCdTimer = 0;
-        else info.UpdateShieldUI(shieldCdTimer, shield.cooldown + shield.timeActive);
+        if (shieldBH.gameObject.activeSelf)
+            shieldBH.transform.position = transform.position;
     }
 
-    private bool CanShield()
+    private void Shield()
     {
-        return shieldCdTimer == 0 ? true : false;
-    }
-
-    public void Shield(Player source)
-    {
-        shieldCdTimer = shield.cooldown + shield.timeActive;
-
         shieldBH.gameObject.SetActive(true);
-        shieldBH.transform.position = transform.position;
-        shieldBH.Use(source.shield.timeActive);
+        shieldBH.Use(shield.timeActive);
     }
     #endregion    
     // ----------------------------------------------------------------------------------

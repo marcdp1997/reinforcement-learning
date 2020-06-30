@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,6 +394,7 @@ MonoBehaviour:
   m_BehaviorName: CoopRollingBall
   TeamId: 0
   m_UseChildSensors: 1
+  m_ObservableAttributeHandling: 0
 --- !u!1 &2036639674278564753
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +548,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5ef001376aba47c42b81f9bffb3ed218, type: 2}
+  - {fileID: 2100000, guid: f066289088417d7469467791962a7b7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -595,6 +596,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentA: {fileID: 7918623055907736565}
   agentB: {fileID: 8542199746466837284}
+  textAgentA: {fileID: 315757707390249479}
+  textAgentB: {fileID: 6820802863256959721}
 --- !u!1 &2863847239176901373
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +750,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56aa6a716d71a434ab950fb1f6b9e1a8, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -840,7 +843,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1048,6 +1051,7 @@ MonoBehaviour:
   m_BehaviorName: CoopRollingBall
   TeamId: 0
   m_UseChildSensors: 1
+  m_ObservableAttributeHandling: 0
 --- !u!1 &6542524034030285455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

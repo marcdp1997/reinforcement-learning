@@ -5,6 +5,7 @@ public class Shield : MonoBehaviour
 {
     public void Use(float timeActive)
     {
+        gameObject.SetActive(true);
         StartCoroutine(CheckTimeActive(timeActive));
     }
 
@@ -17,10 +18,5 @@ public class Shield : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
-    }
-
-    public void ResetShield()
-    {
-        gameObject.SetActive(false);
     }
 }

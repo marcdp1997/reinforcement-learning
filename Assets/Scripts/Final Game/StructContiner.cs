@@ -25,7 +25,6 @@ public struct ShootingStats
 public struct ShieldStats
 {
     public GameObject prefab;
-    public float cooldown;
     public float timeActive;
 }
 
