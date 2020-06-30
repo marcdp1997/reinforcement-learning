@@ -180,7 +180,7 @@ public class Player : Agent
             }
             else currLife -= damage;
         }
-        // Hitting teammate (heal)
+        // Hitting teammate(heal)
         else
         {
             float damage = source.heal.damage;

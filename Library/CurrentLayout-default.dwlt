@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 708, y: 492}
   m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 70
+  controlID: 66
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -833,7 +833,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -893,9 +893,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dce8ffff
-      m_LastClickedID: -5924
-      m_ExpandedIDs: 6eecffff6afbffff84440000
+      m_SelectedIDs: ccbf0000
+      m_LastClickedID: 49100
+      m_ExpandedIDs: ae34ffff0238ffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -958,20 +958,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Final Game
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Final Game
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Marc\Documents\GitHub\reinforcement-learning
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: dc430000
-    m_LastClickedID: 17372
-    m_ExpandedIDs: 00000000163e0000984300009a4300009c4300009e430000a0430000a2430000a4430000a6430000a8430000aa43000000ca9a3b
+    m_SelectedIDs: e8430000
+    m_LastClickedID: 17384
+    m_ExpandedIDs: 00000000163e00009c4300009e430000a0430000a2430000a4430000a6430000a8430000aa430000ac430000ae430000e243000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -999,7 +999,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000984300009a4300009c4300009e430000a0430000a2430000a4430000a6430000a8430000aa430000
+    m_ExpandedIDs: 00000000163e00009c4300009e430000a0430000a2430000a4430000a6430000a8430000aa430000ac430000ae430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300005c56000080c6ffffc62e00003e330000722f0000842f00000e610000222f0000463a0000043c0000382f0000c433000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 78058
+  m_LastSelectedObjectID: -52092
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1146,9 +1146,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.308965, y: -2.8768616, z: -2.1671524}
+    m_Target: {x: -43.40704, y: -8.070477, z: 16.238503}
     speed: 2
-    m_Value: {x: -8.308965, y: -2.8768616, z: -2.1671524}
+    m_Value: {x: -2.0440245, y: 3.5190659, z: 2.0942354}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1194,13 +1194,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.51284784, y: 0.0038618734, z: -0.0023115093, w: 0.85847616}
+    m_Target: {x: 0.6616414, y: 0.0011227761, z: -0.0009958618, w: 0.74982846}
     speed: 2
-    m_Value: {x: 0.51413125, y: 0.0038583735, z: -0.002317283, w: 0.8576997}
+    m_Value: {x: 0.71449226, y: 0.00000016911011, z: 0.0000007694724, w: 0.69964325}
   m_Size:
-    m_Target: 45.60504
+    m_Target: 55.514996
     speed: 2
-    m_Value: 47.75397
+    m_Value: 53.124397
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1352,4 +1352,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 331
