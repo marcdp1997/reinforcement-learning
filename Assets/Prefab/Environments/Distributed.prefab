@@ -383,12 +383,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 12
+    VectorObservationSize: 15
     NumStackedVectorObservations: 1
     VectorActionSize: 03000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 5022602860645237092, guid: de7e7897ec35d6245a0a2038afb5c4ab, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 9234e993c60837e489e1e97fad4cfb6a, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: CoopRollingBall
@@ -1040,12 +1040,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 12
+    VectorObservationSize: 15
     NumStackedVectorObservations: 1
     VectorActionSize: 03000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 5022602860645237092, guid: de7e7897ec35d6245a0a2038afb5c4ab, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 9234e993c60837e489e1e97fad4cfb6a, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: CoopRollingBall

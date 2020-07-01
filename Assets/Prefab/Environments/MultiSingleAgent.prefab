@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -533,7 +533,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56aa6a716d71a434ab950fb1f6b9e1a8, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -662,7 +662,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -755,7 +755,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ea02d23363dbe14e9d4d61cd3ca5149, type: 2}
+  - {fileID: 2100000, guid: b83c25297929c0e468fb485c2f0f8e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -997,6 +997,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent A
       objectReference: {fileID: 0}
+    - target: {fileID: 3396998179064540086, guid: 8ff93491ada9fea4caab1e6042635b73,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 5c21eb715365eac4680a3da314cdc11c,
+        type: 3}
     - target: {fileID: 3396998179064540091, guid: 8ff93491ada9fea4caab1e6042635b73,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1092,6 +1098,12 @@ PrefabInstance:
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 5485270233102363500}
+    - target: {fileID: 3812923903589208720, guid: 96b6089c9b5f34740bc27bec74507871,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: de7e7897ec35d6245a0a2038afb5c4ab,
+        type: 3}
     - target: {fileID: 7816685566742501874, guid: 96b6089c9b5f34740bc27bec74507871,
         type: 3}
       propertyPath: m_LocalPosition.x
