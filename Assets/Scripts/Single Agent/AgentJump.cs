@@ -66,9 +66,10 @@ public class AgentJump : Agent
 
         if (distanceToTarget < 3.0f)
         {
-            float reward = (1.0f - ((float)StepCount / (float)MaxStep)) * 100;
+            float reward = 1.0f;
+            if (MaxStep != 0) reward = (1.0f - ((float)StepCount / (float)MaxStep)) * 100;
             SetReward(reward);
-            debugText.text = "Last episode reward: " + GetCumulativeReward();
+            //debugText.text = "Last episode reward: " + GetCumulativeReward();
             EndEpisode();
         }
     }
