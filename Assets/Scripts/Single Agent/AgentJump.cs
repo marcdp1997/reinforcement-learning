@@ -69,7 +69,8 @@ public class AgentJump : Agent
             float reward = 1.0f;
             if (MaxStep != 0) reward = (1.0f - ((float)StepCount / (float)MaxStep)) * 100;
             SetReward(reward);
-            //debugText.text = "Last episode reward: " + GetCumulativeReward();
+            debugText.text = "Last episode reward: " + reward;
+
             EndEpisode();
         }
     }

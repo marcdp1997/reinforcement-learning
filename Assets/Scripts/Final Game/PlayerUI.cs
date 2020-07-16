@@ -5,8 +5,6 @@ public class PlayerUI : MonoBehaviour
 {
     public Text nameText;
     public Image lifeBar;
-    public Image healBar;
-    public Image shieldBar;
     public Image bulletsBar;
     public Text lifeText;
 
@@ -24,15 +22,5 @@ public class PlayerUI : MonoBehaviour
     public void UpdateBulletsUI(int currBullets, int maxBullets, float rateTimer)
     {
         bulletsBar.fillAmount = (currBullets + rateTimer) / maxBullets;
-    }
-
-    public void UpdateShieldUI(float cooldownTimer, float cooldown)
-    {
-        shieldBar.fillAmount = 1 - cooldownTimer / cooldown;
-    }
-
-    public void UpdateHealUI(float cooldownTimer, float cooldown)
-    {
-        healBar.fillAmount = 1 - cooldownTimer / cooldown;
     }
 }

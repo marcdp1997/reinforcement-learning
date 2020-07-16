@@ -31,7 +31,7 @@ public struct ShieldStats
 [Serializable]
 public struct HealStats
 {
-    public ParticleSystem effect;
+    //public ParticleSystem effect;
     public float damage;
 }
 

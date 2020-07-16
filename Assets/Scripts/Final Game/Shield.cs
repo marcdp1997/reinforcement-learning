@@ -14,9 +14,4 @@ public class Shield : MonoBehaviour
         yield return new WaitForSeconds(timeActive);
         gameObject.SetActive(false);
     }
-
-    private void OnDisable()
-    {
-        StopAllCoroutines();
-    }
 }

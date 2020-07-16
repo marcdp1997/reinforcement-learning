@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody rBody;
     private Player source;
+    private float activeTimer;
 
     private void Awake()
     {
@@ -16,18 +17,16 @@ public class Bullet : MonoBehaviour
         this.source = source;
 
         rBody.velocity = new Vector3(direction.x, 0.0f, direction.z).normalized * bulletSpeed;
-        StartCoroutine(CheckTimeActive(timeActive));
+
+        activeTimer = timeActive;
     }
 
-    private void OnDisable()
+    private void FixedUpdate()
     {
-        StopAllCoroutines();
-    }
+        activeTimer -= Time.deltaTime;
 
-    private IEnumerator CheckTimeActive(float timeActive)
-    {
-        yield return new WaitForSeconds(timeActive);
-        gameObject.SetActive(false);
+        if (activeTimer <= 0)
+            ResetBullet();
     }
 
     private void OnTriggerEnter(Collider other)

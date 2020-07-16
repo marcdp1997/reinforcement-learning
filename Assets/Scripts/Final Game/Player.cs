@@ -31,13 +31,13 @@ public class Player : Agent
     [Space(10)]
     public PlayerStats player;
     public ShootingStats shoot;
-    public ShieldStats shield;
+    //public ShieldStats shield;
     public HealStats heal;
 
-    public override void Initialize()
+    private void Awake()
     {
         rBody = GetComponent<Rigidbody>();
-        shieldBH = Instantiate(shield.prefab, this.transform.position, Quaternion.identity).GetComponent<Shield>();
+        //shieldBH = Instantiate(shield.prefab, this.transform.position, Quaternion.identity).GetComponent<Shield>();
 
         initPosition = this.transform.position;
         initRotation = this.transform.rotation;
@@ -53,7 +53,7 @@ public class Player : Agent
     private void FixedUpdate()
     {
         UpdateAmmunition();
-        UpdateShieldPosition();
+        //UpdateShieldPosition();
     }
 
     private void ResetPlayer()
@@ -65,7 +65,6 @@ public class Player : Agent
         currBullets = 0;
         rateTimer = 0;
         currLife = player.maxLife;
-        shieldBH.Use(shield.timeActive);
 
         info.UpdateLifeUI(currLife, player.maxLife);
         info.UpdateBulletsUI(currBullets, player.maxBullets, rateTimer);
@@ -180,15 +179,11 @@ public class Player : Agent
             }
             else currLife -= damage;
         }
+
         // Hitting teammate(heal)
         else
         {
             float damage = source.heal.damage;
-
-            if (currLife != player.maxLife)
-            {
-                heal.effect.Play();
-            }
 
             if (currLife + damage <= player.maxLife)
             {
@@ -230,11 +225,14 @@ public class Player : Agent
         if (team == Team.Blue) bullet = shoot.pool.GetBlueBullet();
         else bullet = shoot.pool.GetRedBullet();
 
-        bullet.gameObject.SetActive(true);
-        bullet.transform.position = shoot.firePoint.position;
-        bullet.Shoot(this, shoot.speed, shoot.firePoint.forward, shoot.timeActive);
+        if (bullet != null)
+        {
+            bullet.gameObject.SetActive(true);
+            bullet.transform.position = shoot.firePoint.position;
+            bullet.Shoot(this, shoot.speed, shoot.firePoint.forward, shoot.timeActive);
 
-        currBullets--;
+            currBullets--;
+        }
     }
     #endregion
     // ----------------------------------------------------------------------------------
@@ -244,12 +242,6 @@ public class Player : Agent
     {
         if (shieldBH.gameObject.activeSelf)
             shieldBH.transform.position = transform.position;
-    }
-
-    private void Shield()
-    {
-        shieldBH.gameObject.SetActive(true);
-        shieldBH.Use(shield.timeActive);
     }
     #endregion    
     // ----------------------------------------------------------------------------------

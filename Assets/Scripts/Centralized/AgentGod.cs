@@ -6,8 +6,8 @@ using Unity.MLAgents.Sensors;
 public class AgentGod : Agent
 {
     // Agents
-    public int maxAgents = 2;
     public List<AgentCentralized> agents;
+    public TextMesh text;
 
     // Common
     public Transform target = null;
@@ -38,7 +38,7 @@ public class AgentGod : Agent
         sensor.AddObservation(obstacle.position);
 
         // Agents
-        for (int i = 0; i < maxAgents; i++)
+        for (int i = 0; i < agents.Count; i++)
         {
             sensor.AddObservation(agents[i].GetRigidBody().velocity);
             sensor.AddObservation(agents[i].transform.position);
@@ -47,10 +47,8 @@ public class AgentGod : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
-        bool targetReached = false;
-
         // Actions
-        for (int i = 0; i < maxAgents; i++)
+        for (int i = 0; i < agents.Count; i++)
         {
             var x = vectorAction[0 + (i * 3)];
             var y = vectorAction[1 + (i * 3)];
@@ -66,15 +64,14 @@ public class AgentGod : Agent
                 agents[i].GetRigidBody().AddForce(new Vector3(x * agents[i].speed, 0, z * agents[i].speed));
             }
 
-            targetReached = TargetReached(agents[i].transform.position);
-        }
-
-        // Apply reward to god
-        if (targetReached)
-        {
-            float reward = (1.0f - ((float)StepCount / (float)MaxStep)) * 100;
-            SetReward(reward);
-            EndEpisode();
+            // Apply reward to god
+            if (TargetReached(agents[i].transform.position))
+            {
+                float reward = (1.0f - ((float)StepCount / (float)MaxStep)) * 100;
+                SetReward(reward);
+                text.text = "Last episode reward: " + GetCumulativeReward();
+                EndEpisode();
+            }
         }
     }
 

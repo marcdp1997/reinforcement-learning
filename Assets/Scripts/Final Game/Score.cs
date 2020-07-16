@@ -25,17 +25,10 @@ public class Score : MonoBehaviour
         blueScore++;
         blueScoreText.text = blueScore.ToString();
 
-        if (MatchIsOver())
-        {
-            AddReward(1.0f, Team.Blue);
-            AddReward(-1.0f, Team.Red);
-            EndGame();
-        }
-        else
-        {
-            AddReward(1.0f / maxScore, Team.Blue);
-            AddReward(-1.0f / maxScore, Team.Red);
-        }
+        AddReward(1.0f, Team.Blue);
+        AddReward(-1.0f, Team.Red);
+
+        if (MatchIsOver()) EndGame();
     }
 
     public void AddRedScore()
@@ -43,17 +36,10 @@ public class Score : MonoBehaviour
         redScore++;
         redScoreText.text = redScore.ToString();
 
-        if (MatchIsOver())
-        {
-            //AddReward(1.0f, Team.Red);
-            //AddReward(-1.0f, Team.Blue);
-            EndGame();
-        }
-        else
-        {
-            //AddReward(1.0f / maxScore, Team.Red);
-            //AddReward(-1.0f / maxScore, Team.Blue);
-        }
+        AddReward(1.0f, Team.Red);
+        AddReward(-1.0f, Team.Blue);
+
+        if (MatchIsOver()) EndGame();
     }
 
     private void AddReward(float reward, Team team)
